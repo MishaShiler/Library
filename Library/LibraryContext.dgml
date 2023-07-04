@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+<Node Id="IModel" Label="LibraryContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="7.0.7" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
+Relational:MaxIdentifierLength: 128
+RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]
+SqlServer:ValueGenerationStrategy: IdentityColumn" Category="Model" Group="Expanded" />
+<Node Id = "Author" Label="Author" Name="Author" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Authors
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Book" Label="Book" Name="Book" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Books
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Author.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Author.Books" Label="Books (*)" Name="Books" Category="Navigation Collection" Type="List&lt;Book&gt;"  Field="" Dependent="Book" Principal="" Inverse="Author" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Author.FullName" Label="FullName (string)" Name="FullName" Category="Property Required" Type="string" MaxLength="(200)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 200" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "BookDetail" Label="BookDetail" Name="BookDetail" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: BookDetails
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Book.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Book.Author" Label="Author (1)" Name="Author" Category="Navigation Property" Type="Author"  Field="" Dependent="" Principal="Author" Inverse="Books" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Book.BookDetail" Label="BookDetail (1)" Name="BookDetail" Category="Navigation Property" Type="BookDetail"  Field="" Dependent="" Principal="BookDetail" Inverse="Book" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Book.BookReaders" Label="BookReaders (*)" Name="BookReaders" Category="Navigation Collection" Type="List&lt;BookReader&gt;"  Field="" Dependent="BookReader" Principal="" Inverse="Book" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Book.Publisher" Label="Publisher (1)" Name="Publisher" Category="Navigation Property" Type="Publisher"  Field="" Dependent="" Principal="Publisher" Inverse="Books" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Book.AuthorId" Label="AuthorId (int)" Name="AuthorId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Book.BookDetail_Id" Label="BookDetail_Id (int)" Name="BookDetail_Id" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Book.Description" Label="Description (string)" Name="Description" Category="Property Optional" Type="string" MaxLength="(200)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 200" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Book.Name" Label="Name (string)" Name="Name" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Book.PublisherId" Label="PublisherId (int)" Name="PublisherId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "BookReader" Label="BookReader" Name="BookReader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Book_Readers
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "BookDetail.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "BookDetail.Book" Label="Book (1)" Name="Book" Category="Navigation Property" Type="Book"  Field="" Dependent="Book" Principal="" Inverse="BookDetail" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "BookDetail.PagesCount" Label="PagesCount (int)" Name="PagesCount" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "BookDetail.Price" Label="Price (decimal)" Name="Price" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Author" Label="Fluent_Author" Name="Fluent_Author" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Fluent_Authors
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "BookReader.BookId" Label="BookId (int)" Name="BookId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "BookReader.Book" Label="Book (1)" Name="Book" Category="Navigation Property" Type="Book"  Field="" Dependent="" Principal="Book" Inverse="BookReaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "BookReader.Reader" Label="Reader (1)" Name="Reader" Category="Navigation Property" Type="Reader"  Field="" Dependent="" Principal="Reader" Inverse="BookReaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "BookReader.ReaderId" Label="ReaderId (int)" Name="ReaderId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Book" Label="Fluent_Book" Name="Fluent_Book" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Fluent_Books
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Fluent_Author.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Fluent_Author.Books" Label="Books (*)" Name="Books" Category="Navigation Collection" Type="List&lt;Fluent_Book&gt;"  Field="" Dependent="Fluent_Book" Principal="" Inverse="Author" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_Author.FullName" Label="FullName (string)" Name="FullName" Category="Property Required" Type="string" MaxLength="(200)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 200" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_BookDetail" Label="Fluent_BookDetail" Name="Fluent_BookDetail" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Fluent_BookDetails
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Fluent_Book.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Fluent_Book.Author" Label="Author (1)" Name="Author" Category="Navigation Property" Type="Fluent_Author"  Field="" Dependent="" Principal="Fluent_Author" Inverse="Books" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_Book.BookDetail" Label="BookDetail (1)" Name="BookDetail" Category="Navigation Property" Type="Fluent_BookDetail"  Field="" Dependent="Fluent_BookDetail" Principal="" Inverse="Book" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_Book.BookReaders" Label="BookReaders (*)" Name="BookReaders" Category="Navigation Collection" Type="List&lt;Fluent_BookReader&gt;"  Field="" Dependent="Fluent_BookReader" Principal="" Inverse="Book" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_Book.Publisher" Label="Publisher (1)" Name="Publisher" Category="Navigation Property" Type="Fluent_Publisher"  Field="" Dependent="" Principal="Fluent_Publisher" Inverse="Books" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_Book.AuthorId" Label="AuthorId (int)" Name="AuthorId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Book.Description" Label="Description (string)" Name="Description" Category="Property Optional" Type="string" MaxLength="(200)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 200" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Book.Name" Label="Name (string)" Name="Name" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Book.PublisherId" Label="PublisherId (int)" Name="PublisherId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_BookReader" Label="Fluent_BookReader" Name="Fluent_BookReader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Fluent_BookDetail.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Fluent_BookDetail.Book" Label="Book (1)" Name="Book" Category="Navigation Property" Type="Fluent_Book"  Field="" Dependent="" Principal="Fluent_Book" Inverse="BookDetail" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_BookDetail.BookId" Label="BookId (int)" Name="BookId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_BookDetail.PagesCount" Label="PagesCount (int)" Name="PagesCount" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_BookDetail.Price" Label="Price (decimal)" Name="Price" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Precision: 10
+Scale: 5" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Publisher" Label="Fluent_Publisher" Name="Fluent_Publisher" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Fluent_Publishers
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Fluent_BookReader.BookId" Label="BookId (int)" Name="BookId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_BookReader.Book" Label="Book (1)" Name="Book" Category="Navigation Property" Type="Fluent_Book"  Field="" Dependent="" Principal="Fluent_Book" Inverse="BookReaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_BookReader.Reader" Label="Reader (1)" Name="Reader" Category="Navigation Property" Type="Fluent_Reader"  Field="" Dependent="" Principal="Fluent_Reader" Inverse="BookReaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_BookReader.ReaderId" Label="ReaderId (int)" Name="ReaderId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Reader" Label="Fluent_Reader" Name="Fluent_Reader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Fluent_Readers
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Fluent_Publisher.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Fluent_Publisher.Books" Label="Books (*)" Name="Books" Category="Navigation Collection" Type="List&lt;Fluent_Book&gt;"  Field="" Dependent="Fluent_Book" Principal="" Inverse="Publisher" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_Publisher.Address" Label="Address (string)" Name="Address" Category="Property Optional" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Publisher.Name" Label="Name (string)" Name="Name" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Publisher" Label="Publisher" Name="Publisher" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Publishers
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Fluent_Reader.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Fluent_Reader.BookReaders" Label="BookReaders (*)" Name="BookReaders" Category="Navigation Collection" Type="List&lt;Fluent_BookReader&gt;"  Field="" Dependent="Fluent_BookReader" Principal="" Inverse="Reader" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Fluent_Reader.FirstName" Label="FirstName (string)" Name="FirstName" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Reader.LastName" Label="LastName (string)" Name="LastName" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Reader.PhoneNumber" Label="PhoneNumber (string)" Name="PhoneNumber" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Fluent_Reader.TempId" Label="TempId (int)" Name="TempId" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Reader" Label="Reader" Name="Reader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Readers
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Publisher.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Publisher.Books" Label="Books (*)" Name="Books" Category="Navigation Collection" Type="List&lt;Book&gt;"  Field="" Dependent="Book" Principal="" Inverse="Publisher" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Publisher.Address" Label="Address (string)" Name="Address" Category="Property Optional" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Publisher.Name" Label="Name (string)" Name="Name" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Reader" Label="Reader" Name="Reader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="" Category="EntityType" Group="Expanded" />
+<Node Id = "Reader.Id" Label="Id (int)" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Reader.BookReaders" Label="BookReaders (*)" Name="BookReaders" Category="Navigation Collection" Type="List&lt;BookReader&gt;"  Field="" Dependent="BookReader" Principal="" Inverse="Reader" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Reader.FirstName" Label="FirstName (string)" Name="FirstName" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Reader.LastName" Label="LastName (string)" Name="LastName" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Reader.PhoneNumber" Label="PhoneNumber (string)" Name="PhoneNumber" Category="Property Optional" Type="string" MaxLength="(20)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 20
+Relational:ColumnName: Phone" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+  </Nodes>
+  <Links>
+<Link Source = "IModel" Target="Author" Category="Contains" />
+<Link Source = "IModel" Target="Book" Category="Contains" />
+<Link Source = "Author" Target="Author.Books" Category="Contains" />
+<Link Source = "Author" Target="Author.Id" Category="Contains" />
+<Link Source = "Author" Target="Author.FullName" Category="Contains" />
+<Link Source = "IModel" Target="BookDetail" Category="Contains" />
+<Link Source = "Book" Target="Book.Author" Category="Contains" />
+<Link Source = "Book" Target="Book.BookDetail" Category="Contains" />
+<Link Source = "Book" Target="Book.BookReaders" Category="Contains" />
+<Link Source = "Book" Target="Book.Publisher" Category="Contains" />
+<Link Source = "Book" Target="Book.Id" Category="Contains" />
+<Link Source="Book" Target="Author" From="Book.AuthorId" To="Author.Id" Name="Book -> Author" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Book" Target="BookDetail" From="Book.BookDetail_Id" To="BookDetail.Id" Name="Book -> BookDetail" Annotations="" IsUnique="True" Label="1:1" Category="Foreign Key" />
+<Link Source="Book" Target="Publisher" From="Book.PublisherId" To="Publisher.Id" Name="Book -> Publisher" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Book" Target="Book.AuthorId" Category="Contains" />
+<Link Source = "Book" Target="Book.BookDetail_Id" Category="Contains" />
+<Link Source = "Book" Target="Book.Description" Category="Contains" />
+<Link Source = "Book" Target="Book.Name" Category="Contains" />
+<Link Source = "Book" Target="Book.PublisherId" Category="Contains" />
+<Link Source = "IModel" Target="BookReader" Category="Contains" />
+<Link Source = "BookDetail" Target="BookDetail.Book" Category="Contains" />
+<Link Source = "BookDetail" Target="BookDetail.Id" Category="Contains" />
+<Link Source = "BookDetail" Target="BookDetail.PagesCount" Category="Contains" />
+<Link Source = "BookDetail" Target="BookDetail.Price" Category="Contains" />
+<Link Source = "IModel" Target="Fluent_Author" Category="Contains" />
+<Link Source = "BookReader" Target="BookReader.Book" Category="Contains" />
+<Link Source = "BookReader" Target="BookReader.Reader" Category="Contains" />
+<Link Source = "BookReader" Target="BookReader.BookId" Category="Contains" />
+<Link Source="BookReader" Target="Book" From="BookReader.BookId" To="Book.Id" Name="BookReader -> Book" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="BookReader" Target="Reader" From="BookReader.ReaderId" To="Reader.Id" Name="BookReader -> Reader" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "BookReader" Target="BookReader.ReaderId" Category="Contains" />
+<Link Source = "IModel" Target="Fluent_Book" Category="Contains" />
+<Link Source = "Fluent_Author" Target="Fluent_Author.Books" Category="Contains" />
+<Link Source = "Fluent_Author" Target="Fluent_Author.Id" Category="Contains" />
+<Link Source = "Fluent_Author" Target="Fluent_Author.FullName" Category="Contains" />
+<Link Source = "IModel" Target="Fluent_BookDetail" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.Author" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.BookDetail" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.BookReaders" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.Publisher" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.Id" Category="Contains" />
+<Link Source="Fluent_Book" Target="Fluent_Author" From="Fluent_Book.AuthorId" To="Fluent_Author.Id" Name="Fluent_Book -> Fluent_Author" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Fluent_Book" Target="Fluent_Publisher" From="Fluent_Book.PublisherId" To="Fluent_Publisher.Id" Name="Fluent_Book -> Fluent_Publisher" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.AuthorId" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.Description" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.Name" Category="Contains" />
+<Link Source = "Fluent_Book" Target="Fluent_Book.PublisherId" Category="Contains" />
+<Link Source = "IModel" Target="Fluent_BookReader" Category="Contains" />
+<Link Source = "Fluent_BookDetail" Target="Fluent_BookDetail.Book" Category="Contains" />
+<Link Source = "Fluent_BookDetail" Target="Fluent_BookDetail.Id" Category="Contains" />
+<Link Source="Fluent_BookDetail" Target="Fluent_Book" From="Fluent_BookDetail.BookId" To="Fluent_Book.Id" Name="Fluent_BookDetail -> Fluent_Book" Annotations="" IsUnique="True" Label="1:1" Category="Foreign Key" />
+<Link Source = "Fluent_BookDetail" Target="Fluent_BookDetail.BookId" Category="Contains" />
+<Link Source = "Fluent_BookDetail" Target="Fluent_BookDetail.PagesCount" Category="Contains" />
+<Link Source = "Fluent_BookDetail" Target="Fluent_BookDetail.Price" Category="Contains" />
+<Link Source = "IModel" Target="Fluent_Publisher" Category="Contains" />
+<Link Source = "Fluent_BookReader" Target="Fluent_BookReader.Book" Category="Contains" />
+<Link Source = "Fluent_BookReader" Target="Fluent_BookReader.Reader" Category="Contains" />
+<Link Source = "Fluent_BookReader" Target="Fluent_BookReader.BookId" Category="Contains" />
+<Link Source="Fluent_BookReader" Target="Fluent_Book" From="Fluent_BookReader.BookId" To="Fluent_Book.Id" Name="Fluent_BookReader -> Fluent_Book" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Fluent_BookReader" Target="Fluent_Reader" From="Fluent_BookReader.ReaderId" To="Fluent_Reader.Id" Name="Fluent_BookReader -> Fluent_Reader" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Fluent_BookReader" Target="Fluent_BookReader.ReaderId" Category="Contains" />
+<Link Source = "IModel" Target="Fluent_Reader" Category="Contains" />
+<Link Source = "Fluent_Publisher" Target="Fluent_Publisher.Books" Category="Contains" />
+<Link Source = "Fluent_Publisher" Target="Fluent_Publisher.Id" Category="Contains" />
+<Link Source = "Fluent_Publisher" Target="Fluent_Publisher.Address" Category="Contains" />
+<Link Source = "Fluent_Publisher" Target="Fluent_Publisher.Name" Category="Contains" />
+<Link Source = "IModel" Target="Publisher" Category="Contains" />
+<Link Source = "Fluent_Reader" Target="Fluent_Reader.BookReaders" Category="Contains" />
+<Link Source = "Fluent_Reader" Target="Fluent_Reader.Id" Category="Contains" />
+<Link Source = "Fluent_Reader" Target="Fluent_Reader.FirstName" Category="Contains" />
+<Link Source = "Fluent_Reader" Target="Fluent_Reader.LastName" Category="Contains" />
+<Link Source = "Fluent_Reader" Target="Fluent_Reader.PhoneNumber" Category="Contains" />
+<Link Source = "Fluent_Reader" Target="Fluent_Reader.TempId" Category="Contains" />
+<Link Source = "IModel" Target="Reader" Category="Contains" />
+<Link Source = "Publisher" Target="Publisher.Books" Category="Contains" />
+<Link Source = "Publisher" Target="Publisher.Id" Category="Contains" />
+<Link Source = "Publisher" Target="Publisher.Address" Category="Contains" />
+<Link Source = "Publisher" Target="Publisher.Name" Category="Contains" />
+<Link Source = "IModel" Target="Reader" Category="Contains" />
+<Link Source = "Reader" Target="Reader.BookReaders" Category="Contains" />
+<Link Source = "Reader" Target="Reader.Id" Category="Contains" />
+<Link Source = "Reader" Target="Reader.FirstName" Category="Contains" />
+<Link Source = "Reader" Target="Reader.LastName" Category="Contains" />
+<Link Source = "Reader" Target="Reader.PhoneNumber" Category="Contains" />
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+  <Properties>
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="Field"  Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type"  Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />    
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass"  Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+  </Properties>
+</DirectedGraph>
